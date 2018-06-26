@@ -1,0 +1,10 @@
+C:\Users\DAVARCI\Desktop\assignment3\assignment3.c: In function 'main':
+C:\Users\DAVARCI\Desktop\assignment3\assignment3.c:12:45: error: invalid initializer
+   double parking_area[MAX_SIZE][MAX_SIZE] = 0;
+                                             ^
+C:\Users\DAVARCI\Desktop\assignment3\assignment3.c:27:49: error: lvalue required as left operand of assignment
+   while (number_of_c > area_of_p || number_of_c = 0 || number_of_c < 0) {
+                                                 ^
+C:\Users\DAVARCI\Desktop\assignment3\assignment3.c:35:28: error: expected expression before ']' token
+     carlocate(parking_area[][size_of_p], xaxis , yaxis);
+                            ^

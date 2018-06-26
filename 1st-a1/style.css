@@ -1,0 +1,67 @@
+body{
+
+}
+.logo{
+  float: left;
+  width: 100px;
+  height: 50px;
+  margin: 0px 0px;
+}
+address{
+  text-align: right;
+}
+img.aside{
+  width: 250px;
+  height: 400px;
+
+}
+table{
+  width: 250px;
+}
+header{
+  text-align: center;
+}
+aside{
+float: right;
+padding-top: 5em;
+padding-right: 1em;
+margin: 0 0 0.5ex 0.5ex;
+}
+div.container {
+width: 100%;
+}
+nav {
+float: left;
+}
+nav ul {
+list-style-type: none;
+}
+article {
+margin: 2em;
+border-left: 1px solid gray;
+padding: 1em;
+overflow: hidden;
+}
+caption{
+  padding: 15px;
+  font-size: 25px;
+  background-color: #996633;
+  color: white;
+
+}
+tr.subtr{
+  background-color: #e6e6e6;
+  font-size: 0.8em;
+}
+footer{
+  text-align: right;
+}
+td.big{
+ font-weight: bold;
+ font-size: 1em;
+ text-align: left;
+ background-color: #dfbf9f;
+}
+p{
+  text-indent: 2ex;
+}

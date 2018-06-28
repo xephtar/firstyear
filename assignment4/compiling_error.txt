@@ -1,0 +1,24 @@
+C:\Users\DAVARCI\Desktop\assignment4\assignment4.c: In function 'get_sentence':
+C:\Users\DAVARCI\Desktop\assignment4\assignment4.c:35:24: warning: passing argument 1 of 'get_word' makes pointer from integer without a cast [-Wint-conversion]
+   strcpy(temp,get_word(instructions[i].step,instructions[i].index);
+                        ^~~~~~~~~~~~
+C:\Users\DAVARCI\Desktop\assignment4\assignment4.c:13:7: note: expected 'char *' but argument is of type 'int'
+ char* get_word(char* s, int n)
+       ^~~~~~~~
+C:\Users\DAVARCI\Desktop\assignment4\assignment4.c:35:67: error: expected ')' before ';' token
+   strcpy(temp,get_word(instructions[i].step,instructions[i].index);
+                                                                   ^
+C:\Users\DAVARCI\Desktop\assignment4\assignment4.c:39:2: error: expected ';' before '}' token
+  }
+  ^
+C:\Users\DAVARCI\Desktop\assignment4\assignment4.c: In function 'main':
+C:\Users\DAVARCI\Desktop\assignment4\assignment4.c:55:30: error: 'bookfile' undeclared (first use in this function)
+     fgets(line_s[i],MAX_CHAR,bookfile);
+                              ^~~~~~~~
+C:\Users\DAVARCI\Desktop\assignment4\assignment4.c:55:30: note: each undeclared identifier is reported only once for each function it appears in
+C:\Users\DAVARCI\Desktop\assignment4\assignment4.c:86:23: error: 'instructions' undeclared (first use in this function)
+   get_sentence(line_s,instructions,n,sentence_s);
+                       ^~~~~~~~~~~~
+C:\Users\DAVARCI\Desktop\assignment4\assignment4.c:86:36: error: 'n' undeclared (first use in this function)
+   get_sentence(line_s,instructions,n,sentence_s);
+                                    ^

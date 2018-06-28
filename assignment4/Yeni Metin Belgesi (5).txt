@@ -1,0 +1,29 @@
+  // char word_s[MAX_CHAR];
+  // char *word;
+  // word = (char*)malloc(sizeof(char));
+  // for (int y = 0; y < instN; y++) {
+  //   int step = instArr[y].step;
+  //   int index = instArr[y].index;
+  //   word = get_word(lines[step], index);
+  //   int a = strlen(word);
+  //   strcpy(word_s,word);
+  //   word_s[a] = '\0';
+  //
+  //   printf("%s ", word_s);
+  // }
+  // free(word);
+
+
+
+
+
+  // instructions = (struct instruction_s*) malloc(MAX_CHAR * sizeof(struct instruction_s));
+
+
+
+
+  // for (int y = 1; y < instN; y++) {
+  //   int step = instructions[y].step;
+  //   int index = instructions[y].index;
+  //   printf("%d %d\n", step, index);
+  // }

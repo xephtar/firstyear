@@ -1,0 +1,136 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_LINE 10000
+#define MAX_CHAR 200
+
+struct instruction_s {
+  int step;
+  int index;
+};
+
+void get_sentence(char** lines, struct instruction_s* instructions,
+int n_instructions, char* sentence){
+
+}
+
+char* get_word(char* s, int n)
+{
+    char *p = strtok(s, " .,!?\n\t\r");
+    char *a;
+    int wordcounter = 1;
+    while (p != NULL){
+      wordcounter++;
+      p = strtok (NULL, " .,!?\n\t\r");
+      if (wordcounter == n) {
+        a = p;
+      }
+    }
+    return a;
+}
+
+
+int main()
+{
+  // Takes lines and stores them into array
+  char lines[MAX_LINE][MAX_CHAR];
+  int lineN = 1;
+  FILE *fp = fopen("alice.txt", "r");
+  if (fp != NULL) {
+    while (!feof(fp)) {
+      while (lineN < MAX_LINE && fgets(lines[lineN], MAX_CHAR, fp)){
+       lines[lineN][strlen(lines[lineN])] = '\0';
+       lineN = lineN + 1;
+      }
+    }
+    fclose(fp);
+  } else {
+    printf("There is no alice.txt\n");
+  }
+
+  // char *word;
+  // word = (char*)malloc(sizeof(char)*MAX_CHAR);
+  // word = get_word(lines[2172], 14);
+  // printf("%s\n", word);
+  //
+  // printf("%c\n", word[4]);
+  // int a = strlen(word);
+  // for (int i = a; i < MAX_CHAR; i++) {
+  //   word[i] = '\0';
+  // }
+
+
+
+
+// printf("%c\n", lines[2172][0]);
+
+// char line[MAX_LINE][MAX_CHAR];
+// int lineN = 1;
+// int lineC = 0;
+//
+// FILE *fp = fopen("alice.txt", "r");
+// while (fgets(line[lineN], MAX_CHAR, fp)) {
+//   line[lineN][strlen(line[lineN])-1] = '\0';
+//   lineN++;
+// }
+// lineC = lineN;
+//
+// for(lineN = 1; lineN < lineC; ++lineN){
+//     printf("%s\n", line[lineN]);
+// }
+//
+// // printf("%c\n", line[2172][0]);
+
+
+// for (int a = 1; a < lineN; a++) {
+//   printf("%s\n", lines[a]);
+// }
+
+
+  //Takes instructions lines and stores them into array
+
+  struct instruction_s *instructions, instArr;
+  instructions = (struct instruction_s*) malloc(MAX_CHAR * sizeof(struct instruction_s));
+  int instN = 0;
+  fp = fopen("capitals.txt", "r");
+  if (fp != NULL ) {
+    while (fscanf(fp, "%d %d", &(instructions+instN)->step, &(instructions+instN)->index) != EOF) {
+      instructions+instN = instArr.step;
+      instructions+instN = instArr.index;
+      instN++;
+    }
+    fclose(fp);
+  }
+
+
+//Addition of each steps
+  for (int x = 0; x < instN; x++) {
+    if (x > 0) {
+      (instructions+x)->step = (instructions+x)->step + (instructions+x-1)->step;
+    }
+  }
+
+  char word_s[MAX_CHAR];
+  char *word;
+  word = (char*)malloc(sizeof(char));
+  for (int y = 0; y < instN; y++) {
+    int step = (instructions+y)->step;
+    int index = (instructions+y)->index;
+    word = get_word(lines[step], index);
+    int a = strlen(word);
+    strcpy(word_s,word);
+    word_s[a] = '\0';
+
+    printf("%s ", word_s);
+  }
+  free(word);
+
+  // for (int y = 1; y < instN; y++) {
+  //   int step = instructions[y].step;
+  //   int index = instructions[y].index;
+  //   printf("%d %d\n", step, index);
+  // }
+
+  return EXIT_SUCCESS;
+}

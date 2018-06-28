@@ -1,0 +1,21 @@
+// char line[MAX_LINE][MAX_CHAR];
+// int lineN = 1;
+// int lineC = 0;
+//
+// FILE *fp = fopen("alice.txt", "r");
+// while (fgets(line[lineN], MAX_CHAR, fp)) {
+//   line[lineN][strlen(line[lineN])-1] = '\0';
+//   lineN++;
+// }
+// lineC = lineN;
+//
+// for(lineN = 1; lineN < lineC; ++lineN){
+//     printf("%s\n", line[lineN]);
+// }
+//
+// // printf("%c\n", line[2172][0]);
+
+
+// for (int a = 1; a < lineN; a++) {
+//   printf("%s\n", lines[a]);
+// }

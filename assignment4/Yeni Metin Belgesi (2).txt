@@ -1,0 +1,104 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_LINE 10000
+#define MAX_CHAR 200
+
+struct instruction_s {
+  int step;
+  int index;
+}
+
+char* get_word(char* s, int n)
+{
+    // while ( ( s += strspn(s, " \t") ) != '\0' && n-- )
+    // {
+    //     s += strcspn(s, " \t");
+    // }
+    //
+    // return *s ? (char *)s : (char *)0;
+    char *p = strtok(s, " ,.");
+    char *a;
+    int wordcounter = 1;
+    while (p != NULL){
+      wordcounter++;
+      if (wordcounter == n) {
+        a = strtok (NULL, " ,.");
+      }
+      p = strtok (NULL, " ,.");
+    }
+    return a;
+}
+
+
+int main()
+{
+  // Takes lines and stores them into array
+  char lines[MAX_LINE][MAX_CHAR];
+  int lineN = 1;
+  FILE *fp = fopen("alice.txt", "r");
+  if (fp != NULL) {
+    while (!feof(fp)) {
+      while (lineN < MAX_LINE && fgets(lines[lineN], MAX_CHAR, fp)){
+       lines[lineN][strlen(lines[lineN])] = '\0';
+       lineN = lineN + 1;
+      }
+    }
+    fclose(fp);
+  } else {
+    printf("There is no alice.txt\n");
+  }
+
+  // char *word = get_word(lines[2172], 14);
+  // printf("%s\n", word);
+
+
+// printf("%c\n", lines[2172][0]);
+
+// char line[MAX_LINE][MAX_CHAR];
+// int lineN = 1;
+// int lineC = 0;
+//
+// FILE *fp = fopen("alice.txt", "r");
+// while (fgets(line[lineN], MAX_CHAR, fp)) {
+//   line[lineN][strlen(line[lineN])-1] = '\0';
+//   lineN++;
+// }
+// lineC = lineN;
+//
+// for(lineN = 1; lineN < lineC; ++lineN){
+//     printf("%s\n", line[lineN]);
+// }
+//
+// // printf("%c\n", line[2172][0]);
+
+
+// for (int a = 1; a < lineN; a++) {
+//   printf("%s\n", lines[a]);
+// }
+
+
+  //Takes instructions lines and stores them into array
+  int instructions[MAX_CHAR][2];
+  int instN = 1;
+  if (fp = fopen("instructions.txt", "r")) {
+    while (fscanf(fp, "%d %d", &instructions[instN][0], &instructions[instN][1]) != EOF) {
+      instN++;
+    }
+    fclose(fp);
+  }
+
+
+//Addition of each steps
+  for (int x = 1; x < instN; x++) {
+    if (x > 1) {
+      instructions[x][0] = instructions[x][0] + instructions[x-1][0];
+    }
+  }
+// printf("%d\n", instructions[3][0]);
+
+  char words[];
+
+  return EXIT_SUCCESS;
+}

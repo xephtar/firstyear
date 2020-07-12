@@ -1,1 +1,1 @@
-ALL FILES ABOUT MY FIRST YEAR HOMEWORKS
+# The homeworks are written in C and Python languages
